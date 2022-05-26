@@ -11,10 +11,10 @@ namespace DomainDriven.Tests.Application.SpecificationImplementation
     {
         private Guid _idValue;
         private int _streamVersion;
-        private List<TestEvent> _stream;
+        private List<TestEvent> _stream = new();
 
-        private TestEntity _entityObject;
-        private TestEntity _otherEntityObject;
+        private TestEntity _entityObject = null!;
+        private TestEntity _otherEntityObject = null!;
 
         [TestInitialize]
         public void Setup()
@@ -187,7 +187,7 @@ namespace DomainDriven.Tests.Application.SpecificationImplementation
 
         public class TestEvent : DomainEvent
         {
-            public int Version { get; set; }
+            public int Version { get; }
 
             public TestEvent(string id, int version)
             {
