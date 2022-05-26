@@ -2,7 +2,7 @@
 {
     public interface IJournalRepository
     {
-        Task<TEntity> Load<TEntity, TId>(TId id) 
+        Task<TEntity?> Load<TEntity, TId>(string id) 
             where TId : Value<TId>
             where TEntity : SourcedEntity<TId, DomainEvent>;
 
