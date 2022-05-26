@@ -12,17 +12,19 @@ namespace DomainDriven.Application
         {
         }
 
-        public async Task<TEntity?> Load<TEntity, TId>(string id)
+        public async Task<TEntity?> Load<TEntity, TId>(TId id, Func<TId, string> idValueExtractor)
             where TId : Value<TId>
             where TEntity : SourcedEntity<TId, DomainEvent>
         {
-            var stream = await Reader.StreamFor(id);
+            var idValue = idValueExtractor(id);
+            
+            var stream = await Reader.StreamFor(idValue);
 
             if (!stream.Stream.Any())
                 return null;
 
             return (TEntity?) Activator.CreateInstance(typeof(TEntity),
-                ToSourceStream(stream.Stream), stream.StreamVersion);
+                ToSourceStream(stream.Stream), stream.StreamVersion, id);
         }
 
         public async Task Save<TId>(SourcedEntity<TId, DomainEvent> entity) 
