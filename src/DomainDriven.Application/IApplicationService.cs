@@ -4,6 +4,6 @@ namespace DomainDriven.Application
 {
     public interface IApplicationService
     {
-        Task<CommandResult> HandleCommand(IAuditableCommand command);
+        Task<CommandResult> HandleCommand(ICommand command);
     }
 }

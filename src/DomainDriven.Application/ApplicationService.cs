@@ -20,7 +20,7 @@ namespace DomainDriven.Application
             _logger = logger;
         }
 
-        public async Task<CommandResult> HandleCommand(IAuditableCommand command)
+        public async Task<CommandResult> HandleCommand(ICommand command)
         {
             CommandResult? result = null;
             try
