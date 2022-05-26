@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Reflection;
 
-namespace DomainDrivenBase.Domain
+namespace DomainDriven.Domain
 {
     public abstract class Value<T> where T : Value<T>
     {

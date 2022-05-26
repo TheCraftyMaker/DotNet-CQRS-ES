@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenBase.Domain
+﻿namespace DomainDriven.Domain
 {
     public abstract class SourcedEntity<TId, TEvent>
         where TId : Value<TId>

@@ -1,4 +1,4 @@
-﻿namespace DomainDrivenBase.Domain
+﻿namespace DomainDriven.Domain
 {
     public interface IJournalRepository
     {

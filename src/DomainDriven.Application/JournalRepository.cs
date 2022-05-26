@@ -1,7 +1,7 @@
-﻿using DomainDriven.Infrastructure.Bus;
+﻿using DomainDriven.Domain;
+using DomainDriven.Infrastructure.Bus;
 using DomainDriven.Infrastructure.Journal;
 using DomainDriven.Infrastructure.Serialization;
-using DomainDrivenBase.Domain;
 
 namespace DomainDriven.Application
 {

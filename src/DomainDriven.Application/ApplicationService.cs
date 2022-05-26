@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 using DomainDriven.Application.Commands;
-using DomainDrivenBase.Domain;
+using DomainDriven.Domain;
 using Microsoft.Extensions.Logging;
 
 namespace DomainDriven.Application
